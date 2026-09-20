@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Занимания · София</title>
+  <style>
+    :root { --fg:#1a1a1a; --muted:#666; --line:#ddd; --bg:#fafaf8; --card:#fff; --accent:#1a1a1a; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background:var(--bg); color:var(--fg); line-height:1.45; }
+    header { max-width:720px; margin:0 auto; padding:28px 16px 8px; }
+    h1 { font-size:1.5rem; font-weight:700; margin:0 0 6px; }
+    .sub { color:var(--muted); font-size:0.95rem; margin:0 0 4px; }
+    .note { color:var(--muted); font-size:0.8rem; margin:0; }
+    main { max-width:720px; margin:0 auto; padding:12px 16px 48px; display:flex; flex-direction:column; gap:12px; }
+    article.card {
+      background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px;
+      display:grid; gap:6px;
+    }
+    .name { font-weight:650; font-size:1.05rem; }
+    .meta { font-size:0.9rem; color:var(--muted); }
+    .price { font-size:0.95rem; font-weight:600; }
+    a.cta {
+      display:inline-block; margin-top:8px; padding:8px 12px; border-radius:8px;
+      background:var(--accent); color:#fff; text-decoration:none; font-size:0.9rem; font-weight:600;
+      width:fit-content;
+    }
+    a.cta:hover { opacity:0.9; }
+    footer { max-width:720px; margin:0 auto; padding:0 16px 32px; color:var(--muted); font-size:0.75rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Занимания · София</h1>
+    <p class="sub">Възраст · район · цена · как се свързваш</p>
+    <p class="note">Къс списък за тест — не портал и не календар.</p>
+  </header>
+  <main>
+    <article class="card">
+      <div class="name">Еднорог–Босорог</div>
+      <div class="meta">арт / игра · 4–12 г.</div>
+      <div class="meta">Гео Милев · Цариградско шосе 91</div>
+      <div class="price">от 18 €</div>
+      <a class="cta" href="https://www.facebook.com/p/%D0%95%D0%B4%D0%BD%D0%BE%D1%80%D0%BE%D0%B3-%D0%91%D0%BE%D1%81%D0%BE%D1%80%D0%BE%D0%B3-61585718240431/" target="_blank" rel="noopener">Пиши във Facebook</a>
+    </article>
+    <article class="card">
+      <div class="name">Baby Voice</div>
+      <div class="meta">музика / Montessori · 6–36 м / toddler 12–36 м</div>
+      <div class="meta">Център · бул. Дондуков 19</div>
+      <div class="price">по запитване</div>
+      <a class="cta" href="https://baby.voiceacademy.bg/events" target="_blank" rel="noopener">Към програмата</a>
+    </article>
+    <article class="card">
+      <div class="name">hartiika.bg</div>
+      <div class="meta">полимерна глина / хартия · 5+</div>
+      <div class="meta">Овча купел · Младост · Дружба</div>
+      <div class="price">по запитване</div>
+      <a class="cta" href="https://www.facebook.com/hartiika.bg/" target="_blank" rel="noopener">Пиши във Facebook</a>
+    </article>
+    <article class="card">
+      <div class="name">Пространството</div>
+      <div class="meta">четене / рисуване · 6+</div>
+      <div class="meta">Мусагеница / Дървеница</div>
+      <div class="price">от 10 €</div>
+      <a class="cta" href="https://prostranstvoto.bg/tvorcheski_sabitia/" target="_blank" rel="noopener">Към събитията</a>
+    </article>
+    <article class="card">
+      <div class="name">Клуб худ. гимнастика „Биляна“</div>
+      <div class="meta">худ. гимнастика · деца / младежи</div>
+      <div class="meta">Ст. Академик · Академика 4 км</div>
+      <div class="price">по запитване</div>
+      <a class="cta" href="https://rgbilyana.com/" target="_blank" rel="noopener">Към сайта</a>
+    </article>
+    <article class="card">
+      <div class="name">Tiny Tales</div>
+      <div class="meta">музика за малки · 6 м – 3 г.</div>
+      <div class="meta">ул. Кирил Ботев 11</div>
+      <div class="price">по запитване</div>
+      <a class="cta" href="https://tiny-tales.reservio.com/" target="_blank" rel="noopener">Към календара</a>
+    </article>
+    <article class="card">
+      <div class="name">Театър Кошер</div>
+      <div class="meta">куклен театър · предучилищна / начална</div>
+      <div class="meta">София (Централни хали / Мария Луиза)</div>
+      <div class="price">от 6 €</div>
+      <a class="cta" href="https://grabo.bg/places/teatar-kosher" target="_blank" rel="noopener">Към представленията</a>
+    </article>
+    <article class="card">
+      <div class="name">Артистократи</div>
+      <div class="meta">театър / арт ателие · 6–12 г.</div>
+      <div class="meta">Лозенец</div>
+      <div class="price">по запитване</div>
+      <a class="cta" href="https://www.facebook.com/artistokrati" target="_blank" rel="noopener">Пиши във Facebook</a>
+    </article>
+    <article class="card">
+      <div class="name">Акро-Спорт София</div>
+      <div class="meta">акробатика · 3–6 г. (от)</div>
+      <div class="meta">Студентски град · Люлин · Герман</div>
+      <div class="price">от 60 €/мес</div>
+      <a class="cta" href="https://akrosport.com/contact/" target="_blank" rel="noopener">Към контакти</a>
+    </article>
+    <article class="card">
+      <div class="name">Танцова формация Фюжън</div>
+      <div class="meta">модерни / street танци · деца / тийн</div>
+      <div class="meta">Младост · Ал. Малинов 38</div>
+      <div class="price">от ~6 € / занятие</div>
+      <a class="cta" href="https://www.fusion-studio.net/timetable" target="_blank" rel="noopener">Към графика</a>
+    </article>
+    <article class="card">
+      <div class="name">The Light Academy</div>
+      <div class="meta">математика / НВО · 7 клас (НВО)</div>
+      <div class="meta">Лозенец · Горски пътник 56</div>
+      <div class="price">по запитване</div>
+      <a class="cta" href="https://uchiteli.bg/courses/podgotovka-za-nvo-7mi-klas-matematika/1343" target="_blank" rel="noopener">Към обявата</a>
+    </article>
+    <article class="card">
+      <div class="name">British Craft Club</div>
+      <div class="meta">creative workshops EN · деца · EN</div>
+      <div class="meta">Богдановец 20</div>
+      <div class="price">от 30 €/сесия</div>
+      <a class="cta" href="https://britishcraftclub.com/book" target="_blank" rel="noopener">Към записа</a>
+    </article>
+  </main>
+  <footer>
+    Източник на трафик: FB група с UTM. Цените са от публични страници — уточнявай при запис.
+  </footer>
+
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <script>
+  (function () {
+    var p = new URLSearchParams(location.search);
+    var utm = {};
+    ["utm_source", "utm_medium", "utm_campaign"].forEach(function (k) {
+      if (p.get(k)) utm[k] = p.get(k);
+    });
+    function track(name, data) {
+      var payload = Object.assign({}, data || {});
+      if (typeof window.va === "function") {
+        window.va("event", { name: name, data: payload });
+      }
+    }
+    track("bridge_page_view", utm);
+    document.querySelectorAll("a.cta").forEach(function (a) {
+      a.addEventListener("click", function () {
+        var card = a.closest("article");
+        var provider = card && card.querySelector(".name")
+          ? card.querySelector(".name").textContent.trim()
+          : "";
+        track("bridge_cta_click", Object.assign({ provider: provider, href: a.href }, utm));
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
