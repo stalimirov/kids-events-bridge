@@ -3,15 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Занимания и школи в София</title>
-  <meta name="description" content="От постовете в групата — филтрирай по възраст и район, после към организатора." />
-  <meta property="og:title" content="Занимания и школи в София" />
-  <meta property="og:description" content="От постовете в групата — филтрирай по възраст и район, после към организатора." />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <title>Събития за деца в София</title>
+  <meta name="description" content="Работилници, представления и школи за деца в София." />
+  <meta property="og:title" content="Събития за деца в София" />
+  <meta property="og:description" content="Работилници, представления и школи за деца в София." />
   <meta property="og:image" content="https://kids-events-bridge-deploy.vercel.app/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:url" content="https://kids-events-bridge-deploy.vercel.app/" />
   <meta name="robots" content="noindex" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -61,35 +63,22 @@
     .topbar-inner {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 14px 20px;
+      padding: 18px 20px;
     }
-    .brand {
-      font-weight: 600;
-      font-size: 0.92rem;
+    h1 {
+      margin: 0;
+      font-size: 1.15rem;
+      line-height: 1.2;
       letter-spacing: -0.02em;
+      font-weight: 700;
     }
-    .brand a {
+    h1 a {
       color: inherit;
       text-decoration: none;
     }
-    .brand a:hover { color: var(--link); }
+    h1 a:hover { color: var(--link); }
 
-    .wrap { max-width: 1120px; margin: 0 auto; padding: 32px 20px 0; }
-    .intro { margin-bottom: 28px; }
-    h1 {
-      font-size: clamp(1.75rem, 3.6vw, 2.35rem);
-      line-height: 1.08;
-      letter-spacing: -0.03em;
-      font-weight: 700;
-      margin: 0 0 10px;
-    }
-    .sub {
-      margin: 0;
-      max-width: 36rem;
-      color: var(--muted);
-      font-size: 1.05rem;
-      font-weight: 400;
-    }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 28px 20px 0; }
 
     .toolbar {
       display: flex;
@@ -135,7 +124,8 @@
       font-size: 0.88rem;
       font-weight: 500;
       color: var(--muted);
-      white-space: nowrap;
+      white-space: normal;
+      line-height: 1.35;
       padding-bottom: 10px;
     }
 
@@ -156,6 +146,7 @@
 
     .thumb {
       width: 100%;
+      height: auto;
       aspect-ratio: 4 / 3;
       object-fit: cover;
       object-position: 50% 28%;
@@ -233,10 +224,79 @@
       grid-column: 1 / -1;
       text-align: left;
       color: var(--muted);
-      padding: 32px 0 48px;
+      padding: 8px 0 28px;
       font-size: 1.05rem;
       font-weight: 600;
     }
+
+    .lane h2 {
+      font-size: 1.45rem;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      font-weight: 700;
+      margin: 8px 0 16px;
+    }
+    .lane-note {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .lane-head { padding-bottom: 0; }
+    #events-lane { padding-bottom: 8px; }
+
+    .event-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-bottom: 28px;
+    }
+    article.event {
+      display: flex;
+      flex-direction: column;
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    article.event.hidden { display: none; }
+    .event-thumb {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      object-position: 50% 50%;
+      display: block;
+      background: var(--bg);
+    }
+    .when {
+      display: flex;
+      gap: 6px;
+      align-items: baseline;
+      margin: 0 0 2px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .when-day { font-size: 0.92rem; letter-spacing: 0; line-height: 1.2; }
+    .when-mon { margin-top: 0; font-size: 0.92rem; }
+    article.event.no-photo .when {
+      aspect-ratio: 4 / 3;
+      width: 100%;
+      margin: 0;
+      border-radius: 0;
+      background: var(--bg);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 0;
+      padding: 8px;
+    }
+    article.event.no-photo .when-day {
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+      color: var(--text);
+    }
+    article.event .body { padding: 16px 18px 18px; }
+    article.event .price { padding-top: 8px; }
 
     [data-cat="art"] .kicker::before { content: "Арт"; }
     [data-cat="music"] .kicker::before { content: "Музика"; }
@@ -244,17 +304,17 @@
     [data-cat="dance"] .kicker::before { content: "Танци"; }
     [data-cat="theatre"] .kicker::before { content: "Театър"; }
     [data-cat="edu"] .kicker::before { content: "Уроци"; }
+    [data-cat="other"] .kicker::before { content: "Друго"; }
 
     @media (max-width: 1040px) {
-      main.grid { grid-template-columns: repeat(2, 1fr); }
+      main.grid, .event-list { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 720px) {
       .wrap { padding: 20px 16px 0; }
       .toolbar { flex-direction: column; align-items: stretch; gap: 12px; }
       .filters { grid-template-columns: 1fr; }
       .count { padding-bottom: 0; }
-      main.grid { grid-template-columns: 1fr; gap: 16px; }
-      h1 { font-size: 1.7rem; }
+      main.grid, .event-list { grid-template-columns: 1fr; gap: 16px; }
       a.cta { width: 100%; }
     }
   </style>
@@ -262,16 +322,11 @@
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <div class="brand"><a href="https://www.facebook.com/groups/sabitiazadecavsofia" target="_blank" rel="noopener">Събития за деца в София</a></div>
+      <h1><a href="https://www.facebook.com/groups/sabitiazadecavsofia" target="_blank" rel="noopener">Събития за деца в София</a></h1>
     </div>
   </header>
 
   <div class="wrap">
-    <div class="intro">
-      <h1>Занимания и школи в София</h1>
-      <p class="sub">Филтрирай по възраст и район. За повече информация и записвания, пиши на организатора.</p>
-    </div>
-
     <div class="toolbar">
       <div class="filters" id="filters">
         <label>Възраст
@@ -294,7 +349,12 @@
             <option value="mladost">Младост</option>
             <option value="ovcha">Овча купел</option>
             <option value="akademik">Академик</option>
-            <option value="sofia">София</option>
+            <option value="triaditsa">Триадица</option>
+            <option value="borovo">Борово</option>
+            <option value="svoboda">Свобода</option>
+            <option value="strelbishte">Стрелбище</option>
+            <option value="belite-brezi">Белите брези</option>
+            <option value="kriva-reka">Крива река</option>
           </select>
         </label>
         <label>Категория
@@ -306,15 +366,94 @@
             <option value="dance">Танци</option>
             <option value="theatre">Театър</option>
             <option value="edu">Уроци / НВО</option>
+            <option value="other">Друго</option>
           </select>
         </label>
       </div>
-      <p class="count"><span id="shown">26</span> от <span id="total">26</span> занимания</p>
+      <p class="count" id="count-line">5 събития · 63 занимания</p>
     </div>
   </div>
 
+  <section class="lane wrap" id="events-lane">
+    <h2>Събития</h2>
+    <div class="event-list" id="events">
+      <article class="event" data-kind="event" data-slug="mini-art-fest" data-age="0-3,3-6,6-12,12plus" data-area="triaditsa" data-cat="theatre">
+        <div class="event-visual">
+          <img class="event-thumb" src="thumbs/35-mini-art-fest.jpg" alt="Цирколюция, Мини Арт Фест" width="640" height="480" />
+        </div>
+        <div class="body">
+          <div class="when"><span class="when-day">25–27</span><span class="when-mon">сеп</span></div>
+          <p class="kicker" aria-hidden="true"></p>
+          <div class="name">Mini Art Fest</div>
+          <div class="meta">Семеен цирков фестивал в Топлоцентрала.</div>
+          <div class="price">Цирколюция е с вход свободен</div>
+          <a class="cta" href="https://www.facebook.com/events/759524767134332/" target="_blank" rel="noopener">Към събитието</a>
+        </div>
+      </article>
+      <article class="event" data-kind="event" data-slug="bagra" data-age="" data-area="" data-cat="art">
+        <div class="event-visual">
+          <img class="event-thumb" src="thumbs/36-bagra.jpg" alt="БАГРА" width="640" height="480" />
+        </div>
+        <div class="body">
+          <div class="when"><span class="when-day">27</span><span class="when-mon">сеп</span></div>
+          <p class="kicker" aria-hidden="true"></p>
+          <div class="name">БАГРА</div>
+          <div class="meta">Работилница за бродирана глаголица, в 11:00 или в 14:00.</div>
+          <div class="price ask">по запитване</div>
+          <a class="cta" href="https://www.facebook.com/bagratvorec" target="_blank" rel="noopener">Към страницата</a>
+        </div>
+      </article>
+      <article class="event" data-kind="event" data-slug="sinergia" data-age="3-6,6-12,12plus" data-area="centar" data-cat="music">
+        <div class="event-visual">
+          <img class="event-thumb" src="thumbs/37-sinergia.jpg" alt="Петьо и вълкът" width="640" height="480" />
+        </div>
+        <div class="body">
+          <div class="when"><span class="when-day">4</span><span class="when-mon">окт</span></div>
+          <p class="kicker" aria-hidden="true"></p>
+          <div class="name">Синергия</div>
+          <div class="meta">Музикална приказка „Петьо и вълкът“ за деца над 3 години, в 11:00.</div>
+          <div class="meta">City Mark, до Докторска градина</div>
+          <div class="price ask">по запитване</div>
+          <a class="cta" href="https://cmart.info/events/petyo-i-valkat/" target="_blank" rel="noopener">Към представлението</a>
+        </div>
+      </article>
+      <article class="event" data-kind="event" data-slug="elizabet-workshops" data-age="6-12,12plus" data-area="" data-cat="art">
+        <div class="event-visual">
+          <img class="event-thumb" src="thumbs/38-elizabet.jpg" alt="Творчески работилници" width="640" height="480" />
+        </div>
+        <div class="body">
+          <div class="when"><span class="when-day">съб</span><span class="when-mon">окт</span></div>
+          <p class="kicker" aria-hidden="true"></p>
+          <div class="name">Елизабет Георгиева</div>
+          <div class="meta">В събота от 10:30: космос в бурканче, камъчета и есенна фея.</div>
+          <div class="meta">Детска къща Монтесори килимчета</div>
+          <div class="price ask">по запитване</div>
+          <a class="cta" href="https://www.facebook.com/events/28456608123998171/" target="_blank" rel="noopener">Към събитието</a>
+        </div>
+      </article>
+      <article class="event" data-kind="event" data-slug="obrazovatelna-fabrika" data-age="0-3,3-6" data-area="centar" data-cat="other">
+        <div class="event-visual">
+          <img class="event-thumb" src="thumbs/39-fabrika.jpg" alt="Образователна фабрика" width="640" height="480" />
+        </div>
+        <div class="body">
+          <div class="when"><span class="when-day">уикенд</span><span class="when-mon">ное</span></div>
+          <p class="kicker" aria-hidden="true"></p>
+          <div class="name">Образователна фабрика</div>
+          <div class="meta">Фестивал КОД ДЕТСТВО за ранно детско развитие.</div>
+          <div class="price ask">по запитване</div>
+          <a class="cta" href="https://www.facebook.com/edufactoryorg" target="_blank" rel="noopener">Към страницата</a>
+        </div>
+      </article>
+    </div>
+    <p id="empty-events" class="empty" hidden>Няма събития за тези филтри.</p>
+  </section>
+
+  <div class="lane lane-head wrap">
+    <h2>Занимания</h2>
+  </div>
+
   <main class="grid wrap" id="grid" style="padding-top:0">
-    <article class="card" data-age="3-6,6-12" data-area="geo-milev" data-cat="art">
+    <article class="card" data-kind="service" data-age="3-6,6-12" data-area="geo-milev" data-cat="art">
       <img class="thumb" src="thumbs/01-ednorog-bosorog.jpg" alt="Еднорог–Босорог" width="640" height="480" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -325,7 +464,7 @@
         <a class="cta" href="https://www.facebook.com/p/%D0%95%D0%B4%D0%BD%D0%BE%D1%80%D0%BE%D0%B3-%D0%91%D0%BE%D1%81%D0%BE%D1%80%D0%BE%D0%B3-61585718240431/" target="_blank" rel="noopener">Пиши във Facebook</a>
       </div>
     </article>
-    <article class="card" data-age="0-3" data-area="centar" data-cat="music">
+    <article class="card" data-kind="service" data-age="0-3" data-area="centar" data-cat="music">
       <img class="thumb" src="thumbs/02-baby-voice.jpg" alt="Baby Voice" width="640" height="480" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -336,7 +475,7 @@
         <a class="cta" href="https://baby.voiceacademy.bg/events" target="_blank" rel="noopener">Към програмата</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12" data-area="ovcha,mladost" data-cat="art">
+    <article class="card" data-kind="service" data-age="3-6,6-12" data-area="ovcha,mladost" data-cat="art">
       <img class="thumb banner" src="thumbs/03-hartiika.jpg" alt="hartiika.bg" width="640" height="480" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -347,7 +486,7 @@
         <a class="cta" href="https://www.facebook.com/hartiika.bg/" target="_blank" rel="noopener">Пиши във Facebook</a>
       </div>
     </article>
-    <article class="card" data-age="6-12" data-area="musagenica" data-cat="art">
+    <article class="card" data-kind="service" data-age="6-12" data-area="musagenica" data-cat="art">
       <img class="thumb" src="thumbs/04-prostranstvoto.jpg" alt="Пространството" width="640" height="480" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -358,7 +497,7 @@
         <a class="cta" href="https://prostranstvoto.bg/tvorcheski_sabitia/" target="_blank" rel="noopener">Към събитията</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12" data-area="akademik,geo-milev" data-cat="sport">
+    <article class="card" data-kind="service" data-age="3-6,6-12" data-area="akademik,geo-milev" data-cat="sport">
       <img class="thumb" src="thumbs/05-bilyana-rg.jpg" alt="КХГ Биляна" width="640" height="480" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -369,18 +508,18 @@
         <a class="cta" href="https://rgbilyana.com/" target="_blank" rel="noopener">Към сайта</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12" data-area="sofia" data-cat="music">
+    <article class="card" data-kind="service" data-age="6-12,12plus" data-area="centar" data-cat="music">
       <img class="thumb" src="thumbs/06-sofia-philharmonic.jpg" alt="Софийска филхармония" width="640" height="480" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
         <div class="name">Софийска филхармония</div>
         <div class="meta">хор / Fortissimo · деца</div>
-        <div class="meta">София</div>
+        <div class="meta">Център, зала България</div>
         <div class="price ask">по запитване</div>
         <a class="cta" href="https://sofiaphilharmonic.com/" target="_blank" rel="noopener">Към сайта</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12" data-area="sofia" data-cat="edu">
+    <article class="card" data-kind="service" data-age="3-6,6-12" data-area="" data-cat="edu">
       <img class="thumb" src="thumbs/07-elit-center.jpg" alt="ДОЦ ЕЛИТ" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -391,7 +530,7 @@
         <a class="cta" href="https://elit4kids.com/" target="_blank" rel="noopener">Към сайта</a>
       </div>
     </article>
-    <article class="card" data-age="0-3" data-area="centar" data-cat="music">
+    <article class="card" data-kind="service" data-age="0-3" data-area="centar" data-cat="music">
       <img class="thumb banner" src="thumbs/08-tiny-tales.jpg" alt="Tiny Tales" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -402,7 +541,7 @@
         <a class="cta" href="https://tiny-tales.reservio.com/" target="_blank" rel="noopener">Към календара</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12" data-area="sofia" data-cat="theatre">
+    <article class="card" data-kind="service" data-age="3-6,6-12" data-area="" data-cat="theatre">
       <img class="thumb" src="thumbs/09-teatar-kosher.jpg" alt="Театър Кошер" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -413,7 +552,7 @@
         <a class="cta" href="https://grabo.bg/places/teatar-kosher" target="_blank" rel="noopener">Към представленията</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12" data-area="lozenets" data-cat="theatre">
+    <article class="card" data-kind="service" data-age="3-6,6-12" data-area="lozenets" data-cat="theatre">
       <img class="thumb" src="thumbs/10-artistokrati.jpg" alt="Артистократи" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -424,7 +563,7 @@
         <a class="cta" href="https://www.facebook.com/artistokrati" target="_blank" rel="noopener">Пиши във Facebook</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12,12plus" data-area="studentski" data-cat="sport">
+    <article class="card" data-kind="service" data-age="3-6,6-12,12plus" data-area="studentski" data-cat="sport">
       <img class="thumb" src="thumbs/11-akro-sport.jpg" alt="Акро-Спорт София" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -435,7 +574,7 @@
         <a class="cta" href="https://akrosport.com/contact/" target="_blank" rel="noopener">Към контакти</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12" data-area="sofia" data-cat="sport">
+    <article class="card" data-kind="service" data-age="3-6,6-12" data-area="" data-cat="sport">
       <img class="thumb" src="thumbs/12-taekwondo-legends.jpg" alt="Taekwondo Legends" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -446,7 +585,7 @@
         <a class="cta" href="https://www.facebook.com/people/Taekwondo-club-Legends/61570612354574/" target="_blank" rel="noopener">Пиши във Facebook</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12" data-area="sofia" data-cat="sport">
+    <article class="card" data-kind="service" data-age="3-6,6-12" data-area="" data-cat="sport">
       <img class="thumb" src="thumbs/13-la-atletik.jpg" alt="Клуб ЛА Атлетик" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -457,7 +596,7 @@
         <a class="cta" href="https://www.facebook.com/Leka.atletika.Athletic/" target="_blank" rel="noopener">Пиши във Facebook</a>
       </div>
     </article>
-    <article class="card" data-age="6-12,12plus" data-area="mladost" data-cat="dance">
+    <article class="card" data-kind="service" data-age="6-12,12plus" data-area="mladost" data-cat="dance">
       <img class="thumb" src="thumbs/14-fusion-dance.jpg" alt="Танцова формация Фюжън" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -468,18 +607,18 @@
         <a class="cta" href="https://www.fusion-studio.net/timetable" target="_blank" rel="noopener">Към графика</a>
       </div>
     </article>
-    <article class="card" data-age="0-3" data-area="sofia" data-cat="music">
+    <article class="card" data-kind="service" data-age="0-3,3-6" data-area="centar" data-cat="music">
       <img class="thumb" src="thumbs/15-fortissimo-familia.jpg" alt="Фортисимо Фамилия" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
         <div class="name">Фортисимо Фамилия</div>
         <div class="meta">концерт · малки</div>
-        <div class="meta">София</div>
+        <div class="meta">Център, зала България</div>
         <div class="price ask">по запитване</div>
         <a class="cta" href="https://sofiaphilharmonic.com/specialen-proekt/detska-programa-fortisimo" target="_blank" rel="noopener">Към Фортисимо</a>
       </div>
     </article>
-    <article class="card" data-age="12plus" data-area="sofia" data-cat="edu">
+    <article class="card" data-kind="service" data-age="6-12,12plus" data-area="" data-cat="edu">
       <img class="thumb" src="thumbs/16-moliviya.jpg" alt="Моливия" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -490,7 +629,7 @@
         <a class="cta" href="https://www.moliviya.bg/" target="_blank" rel="noopener">Към сайта</a>
       </div>
     </article>
-    <article class="card" data-age="12plus" data-area="lozenets" data-cat="edu">
+    <article class="card" data-kind="service" data-age="12plus" data-area="lozenets" data-cat="edu">
       <img class="thumb" src="thumbs/17-light-academy.jpg" alt="The Light Academy" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -501,7 +640,7 @@
         <a class="cta" href="https://the-light-academy.github.io/the-light-academy/index.html" target="_blank" rel="noopener">Към сайта</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12" data-area="sofia" data-cat="edu">
+    <article class="card" data-kind="service" data-age="3-6,6-12" data-area="kriva-reka" data-cat="edu">
       <img class="thumb" src="thumbs/18-smart-start.jpg" alt="Smart Start Academy" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -512,7 +651,7 @@
         <a class="cta" href="https://uchiteli.bg/profile/ucheben-centyr/90130" target="_blank" rel="noopener">Към профила</a>
       </div>
     </article>
-    <article class="card" data-age="0-3,3-6" data-area="sofia" data-cat="music">
+    <article class="card" data-kind="service" data-age="0-3,3-6" data-area="" data-cat="music">
       <img class="thumb" src="thumbs/19-valshebniyat-kut.jpg" alt="Вълшебният кът" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -523,7 +662,7 @@
         <a class="cta" href="https://www.valshebenkat.com/contact" target="_blank" rel="noopener">Към сайта</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12" data-area="sofia" data-cat="art">
+    <article class="card" data-kind="service" data-age="3-6,6-12" data-area="lozenets" data-cat="art">
       <img class="thumb" src="thumbs/20-british-craft-club.jpg" alt="British Craft Club" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -534,7 +673,7 @@
         <a class="cta" href="https://britishcraftclub.com/book" target="_blank" rel="noopener">Към записа</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12" data-area="sofia" data-cat="art">
+    <article class="card" data-kind="service" data-age="3-6,6-12,12plus" data-area="" data-cat="art">
       <img class="thumb" src="thumbs/21-yuki-art.jpg" alt="Yuki Art" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -545,7 +684,7 @@
         <a class="cta" href="https://www.facebook.com/profile.php?id=61553857374786" target="_blank" rel="noopener">Пиши във Facebook</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12" data-area="centar" data-cat="edu">
+    <article class="card" data-kind="service" data-age="3-6,6-12" data-area="centar" data-cat="edu">
       <img class="thumb" src="thumbs/22-svetlinki.jpg" alt="Учебен център Светлинки" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -556,7 +695,7 @@
         <a class="cta" href="https://svetlinki.com/" target="_blank" rel="noopener">Към сайта</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12,12plus" data-area="studentski" data-cat="dance">
+    <article class="card" data-kind="service" data-age="3-6,6-12,12plus" data-area="studentski" data-cat="dance">
       <img class="thumb banner" src="thumbs/23-dream-team.jpg" alt="Клуб по спортни танци Дрийм Тийм" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -567,7 +706,7 @@
         <a class="cta" href="https://www.facebook.com/profile.php?id=61570546993914" target="_blank" rel="noopener">Пиши във Facebook</a>
       </div>
     </article>
-    <article class="card" data-age="6-12" data-area="sofia" data-cat="art">
+    <article class="card" data-kind="service" data-age="6-12" data-area="svoboda" data-cat="art">
       <img class="thumb banner" src="thumbs/24-tvorim.jpg" alt="Арт ателие Творим свободно" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -578,7 +717,7 @@
         <a class="cta" href="https://forms.gle/wsZkfVjyhBGpgP7b6" target="_blank" rel="noopener">Към записа</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12,12plus" data-area="centar" data-cat="dance">
+    <article class="card" data-kind="service" data-age="3-6,6-12,12plus" data-area="centar" data-cat="dance">
       <img class="thumb banner" src="thumbs/25-alea.jpg" alt="Dance studio Alea" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -589,7 +728,7 @@
         <a class="cta" href="https://www.facebook.com/profile.php?id=61555622237848" target="_blank" rel="noopener">Пиши във Facebook</a>
       </div>
     </article>
-    <article class="card" data-age="3-6,6-12,12plus" data-area="sofia" data-cat="dance">
+    <article class="card" data-kind="service" data-age="3-6,6-12,12plus" data-area="borovo" data-cat="dance">
       <img class="thumb" src="thumbs/26-sway.jpg" alt="Танцова школа Sway" width="640" height="480" loading="lazy" />
       <div class="body">
         <p class="kicker" aria-hidden="true"></p>
@@ -597,7 +736,394 @@
         <div class="meta">латино / балет · деца</div>
         <div class="meta">Борово, Природа 12</div>
         <div class="price ask">по запитване</div>
-        <a class="cta" href="https://swayschool.com/" target="_blank" rel="noopener">Към сайта</a>
+        <a class="cta" href="https://swayschool.com/grafik/" target="_blank" rel="noopener">Към графика</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="15-vrabcheta" data-age="6-12" data-area="centar" data-cat="edu">
+      <img class="thumb" src="thumbs/27-15-vrabcheta.jpg" alt="15 Врабчета" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">15 Врабчета</div>
+        <div class="meta">Творческа занималня за деца от 6 до 12 години.</div>
+        <div class="meta">Център, ул. Врабча 15А</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/15vrabcheta" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="art-ulitsa" data-age="3-6,6-12,12plus" data-area="" data-cat="theatre">
+      <img class="thumb banner" src="thumbs/28-art-ulitsa.jpg" alt="Арт улица" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Арт улица</div>
+        <div class="meta">Театрални игри всяка неделя от 11:00.</div>
+        <div class="meta">ул. Гюешево 50</div>
+        <div class="price">10 € първо посещение</div>
+        <a class="cta" href="https://www.facebook.com/ArtUlitsa" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="stefka-ballet" data-age="" data-area="strelbishte,belite-brezi" data-cat="dance">
+      <img class="thumb banner" src="thumbs/29-stefka-ballet.jpg" alt="Балетно студио Pointé" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Балетно студио Pointé</div>
+        <div class="meta">Стрелбище в понеделник и сряда, Белите брези във вторник и четвъртък.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/BalletStudioPointe" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="numerika" data-age="" data-area="mladost" data-cat="edu">
+      <img class="thumb banner" src="thumbs/30-numerika.jpg" alt="Numerika Младост" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Numerika Младост</div>
+        <div class="meta">Ментална аритметика. Първият урок е безплатен.</div>
+        <div class="meta">Младост</div>
+        <a class="cta" href="https://www.facebook.com/MAMladost" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="umni-deca" data-age="" data-area="" data-cat="edu">
+      <img class="thumb banner" src="thumbs/31-umni-deca.jpg" alt="Умни деца" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Умни деца</div>
+        <div class="meta">Център за развитие. Обявен е демо урок.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/umnideca" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="spodeleno" data-age="" data-area="" data-cat="dance">
+      <img class="thumb" src="thumbs/32-spodeleno.jpg" alt="Споделено пространство" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Споделено пространство</div>
+        <div class="meta">Детски център с танцова академия за новия сезон.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/spodelen0" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="flamingo-lozenets" data-age="3-6,6-12,12plus" data-area="lozenets" data-cat="other">
+      <img class="thumb banner" src="thumbs/33-flamingo-lozenets.jpg" alt="Flamingo Lozenets" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Flamingo Lozenets</div>
+        <div class="meta">Парти център и занималня.</div>
+        <div class="meta">Лозенец, ул. Вишнева 12</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/flamingolozenets" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="malki-muzikalni" data-age="3-6,6-12,12plus" data-area="" data-cat="music">
+      <img class="thumb banner" src="thumbs/34-malki-muzikalni.jpg" alt="Малки музикални уроци" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Малки музикални уроци</div>
+        <div class="meta">Пиано, китара, пеене и солфеж, от 3 години.</div>
+        <div class="meta">ул. Димитър Хаджикоцев 59</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://malkimuzikalniuroci.com/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="aleko-konstantinov" data-age="6-12,12plus" data-area="" data-cat="edu">
+      <img class="thumb" src="thumbs/40-aleko-konstantinov.jpg" alt="Читалище Алеко Константинов 1897" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Читалище „Алеко Константинов 1897“</div>
+        <div class="meta">Запис за 1.–7. клас през учебната година.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://akonstantinov.org/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="big-bubble" data-age="" data-area="" data-cat="other">
+      <img class="thumb" src="thumbs/41-big-bubble.jpg" alt="Big bubble in Bulgaria" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Big bubble in Bulgaria</div>
+        <div class="meta">Шоу с големи сапунени балони за детски празници.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/Big.soap.bubble.show.Bulgaria" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="chitalishte-ivan-vazov" data-age="6-12,12plus" data-area="" data-cat="edu">
+      <img class="thumb" src="thumbs/42-chitalishte-ivan-vazov.jpg" alt="Читалище Иван Вазов 2014" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Читалище „Иван Вазов – 2014“</div>
+        <div class="meta">Математика за 5., 6. и 7. клас, сряда и петък. Първият урок е безплатен.</div>
+        <div class="meta">жк. Левски В, бл. 5</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://vazov.info/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="emjoy" data-age="" data-area="" data-cat="sport">
+      <img class="thumb" src="thumbs/43-emjoy.jpg" alt="Емджой" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Емджой</div>
+        <div class="meta">Подготвителни групи по художествена гимнастика.</div>
+        <div class="meta">Winbet Sport &amp; Event Centre</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/61550679380480/" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="fighters-nsa" data-age="" data-area="studentski" data-cat="sport">
+      <img class="thumb banner" src="thumbs/44-fighters-nsa.jpg" alt="Fighters-NSA" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Fighters-NSA</div>
+        <div class="meta">Шинкиокушин, понеделник, сряда и петък.</div>
+        <div class="meta">Национална спортна академия</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/nsashinkyokushin" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="nauzhkim" data-age="" data-area="" data-cat="edu">
+      <img class="thumb banner" src="thumbs/45-nauzhkim.jpg" alt="Наужким" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Наужким</div>
+        <div class="meta">Детско терапевтично пространство, групови занимания.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://nauzhkim.com/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="playzone" data-age="" data-area="" data-cat="venue">
+      <img class="thumb" src="thumbs/46-playzone.jpg" alt="PlayZone.bg" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">PlayZone.bg</div>
+        <div class="meta">Закрита парти зала с детски кът.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://playzone.bg/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="shisharka" data-age="" data-area="" data-cat="art">
+      <img class="thumb banner" src="thumbs/47-shisharka.jpg" alt="ШиШарка" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">ШиШарка</div>
+        <div class="meta">Детска работилница за рисуване.</div>
+        <div class="meta">бул. Евлоги и Христо Георгиеви 123</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://shisharka.eu/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="sofia-maker-space" data-age="6-12,12plus" data-area="" data-cat="art">
+      <img class="thumb banner" src="thumbs/48-sofia-maker-space.jpg" alt="Sofia Maker Space" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Sofia Maker Space</div>
+        <div class="meta">Керамика, дърводелство и 3D принт за деца от 8 до 15 години.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://sofiamakerspace.com/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="stemy-reduta" data-age="" data-area="" data-cat="edu">
+      <img class="thumb banner" src="thumbs/49-stemy-reduta.jpg" alt="StemY Reduta" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">StemY Reduta</div>
+        <div class="meta">Роботика и STEM занимания.</div>
+        <div class="meta">Редута</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.stem-y.com/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="superforma" data-age="6-12,12plus" data-area="" data-cat="dance">
+      <img class="thumb" src="thumbs/50-superforma.jpg" alt="Superforma" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Superforma</div>
+        <div class="meta">Нови групи по спорт и танци за деца и тийнейджъри.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.superforma.org/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="tiara" data-age="3-6,6-12,12plus" data-area="" data-cat="dance">
+      <img class="thumb" src="thumbs/51-tiara.jpg" alt="Балетна школа Тиара" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Балетна школа Тиара</div>
+        <div class="meta">Сезон 2026/27, на 13 места в града.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://ballet-tiara.com/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="tisiart" data-age="6-12" data-area="" data-cat="art">
+      <img class="thumb" src="thumbs/52-tisiart.jpg" alt="ТиСиАрт" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">ТиСиАрт</div>
+        <div class="meta">Творческо ателие за 1.–6. клас.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/atelie.TiSiART.bg/" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="valshebnoto-myasto" data-age="" data-area="" data-cat="venue">
+      <img class="thumb" src="thumbs/53-valshebnoto-myasto.jpg" alt="Вълшебното място" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Вълшебното място</div>
+        <div class="meta">Зала за детски празници. Пишете за свободна дата.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://valshebnoto.com/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="vedina" data-age="6-12,12plus" data-area="lozenets" data-cat="art">
+      <img class="thumb" src="thumbs/54-vedina.jpg" alt="Ведина" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Ведина</div>
+        <div class="meta">Рисуване и подготовка за изпит, четвъртък и петък от 16:00.</div>
+        <div class="meta">Лозенец, ул. Червена стена 4</div>
+        <div class="price">30 € за посещение</div>
+        <a class="cta" href="https://mylink.bg/vedina" target="_blank" rel="noopener">Към страницата</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="viki-kids" data-age="3-6,6-12,12plus" data-area="" data-cat="edu">
+      <img class="thumb" src="thumbs/55-viki-kids.jpg" alt="Viki and kids" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Viki&amp;kids</div>
+        <div class="meta">Нова група за 5.–7. клас и занимания за деца от 5 до 12 години.</div>
+        <div class="meta">ж.к. Дружба 2</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/61557847461753/" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="slavina-art" data-age="3-6,6-12" data-area="" data-cat="music">
+      <img class="thumb" src="thumbs/56-slavina-art.jpg" alt="Славина АРТ център" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Славина АРТ център</div>
+        <div class="meta">Пеене за деца от 4 до 10 години, от септември.</div>
+        <div class="meta">ж.к. Дървеница</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://slavina-art.com/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="little-treasures" data-age="0-3,3-6,6-12" data-area="" data-cat="sport">
+      <img class="thumb" src="thumbs/57-little-treasures.jpg" alt="Little Treasures Yoga" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Little Treasures Yoga</div>
+        <div class="meta">Йога с Монтесори подход, делник от 8:00 до 12:30.</div>
+        <div class="meta">ж.к. Гоце Делчев, бл. 258</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://littletreasuresyogakids.com/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="binabanbina" data-age="" data-area="" data-cat="art">
+      <img class="thumb banner" src="thumbs/58-binabanbina.jpg" alt="Binabanbina" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Binabanbina</div>
+        <div class="meta">Два курса по шиене от октомври.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/ettabyBinabanbina" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="cveti" data-age="" data-area="studentski" data-cat="dance">
+      <img class="thumb banner" src="thumbs/59-cveti.jpg" alt="Танцов състав Цвети" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Танцов състав Цвети</div>
+        <div class="meta">Репетиции вторник и четвъртък от 18:00.</div>
+        <div class="meta">Национална спортна академия</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/61580166009881/" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="gimnastika-za-deca" data-age="" data-area="" data-cat="sport">
+      <img class="thumb" src="thumbs/60-gimnastika-za-deca.jpg" alt="Гимнастика за деца" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Гимнастика за деца</div>
+        <div class="meta">Нови групи от септември.</div>
+        <div class="meta">Спортен комплекс Раковски</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/p/%D0%93%D0%B8%D0%BC%D0%BD%D0%B0%D1%81%D1%82%D0%B8%D0%BA%D0%B0-%D0%B7%D0%B0-%D0%B4%D0%B5%D1%86%D0%B0-100067782910188/" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="ma-bebe" data-age="0-3,3-6" data-area="" data-cat="other">
+      <img class="thumb banner" src="thumbs/61-ma-bebe.jpg" alt="Ma-Bebe PlayHouse" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Ma-Bebe PlayHouse</div>
+        <div class="meta">Work &amp; Play: родителят е наблизо, детето играе.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/mabebehouse" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="mirela-math" data-age="" data-area="geo-milev" data-cat="edu">
+      <img class="thumb banner" src="thumbs/62-mirela-math.jpg" alt="Психопозитивно Math and Mind" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Психопозитивно</div>
+        <div class="meta">Math &amp; Mind академия.</div>
+        <div class="meta">Гео Милев, ул. Едисон 50</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://psihopozitivno.com/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="naomart" data-age="" data-area="" data-cat="art">
+      <img class="thumb banner" src="thumbs/63-naomart.jpg" alt="Naomart" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Naomart</div>
+        <div class="meta">Курс по рисуване, 90 минути.</div>
+        <div class="meta">Холистичен център Охана</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/Nakitaellaom/" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="sportiko" data-age="" data-area="" data-cat="sport">
+      <img class="thumb banner" src="thumbs/64-sportiko.jpg" alt="СК Спортико" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">СК Спортико</div>
+        <div class="meta">Лека атлетика. Нова учебна година.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/sc.sportico" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="tily-lessons" data-age="6-12,12plus" data-area="" data-cat="edu">
+      <img class="thumb banner" src="thumbs/65-tily-lessons.jpg" alt="Lessons with Tily" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Tily Lessons</div>
+        <div class="meta">Онлайн: творческо писане за 9–13 години и дебат за 13–16, от януари.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.tilylessons.com/" target="_blank" rel="noopener">Към сайта</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="tsvetno-hvarchilo" data-age="" data-area="" data-cat="art">
+      <img class="thumb" src="thumbs/66-tsvetno-hvarchilo.jpg" alt="Цветно хвърчило" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Цветно хвърчило</div>
+        <div class="meta">Творческа работилница. Дървени фигурки в неделя.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/100085698384487/" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="vodoley" data-age="" data-area="" data-cat="theatre">
+      <img class="thumb banner" src="thumbs/67-vodoley.jpg" alt="Водолей" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">Водолей</div>
+        <div class="meta">Школа за театрално и филмово изкуство. Прием 2026/2027.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/DTVodolei" target="_blank" rel="noopener">Пиши във Facebook</a>
+      </div>
+    </article>
+    <article class="card" data-kind="service" data-slug="karton" data-age="" data-area="" data-cat="art">
+      <img class="thumb" src="thumbs/68-karton.jpg" alt="кАРТон" width="640" height="480" loading="lazy" />
+      <div class="body">
+        <p class="kicker" aria-hidden="true"></p>
+        <div class="name">кАРТон</div>
+        <div class="meta">Всеки ден от 18:00, различна тема.</div>
+        <div class="price ask">по запитване</div>
+        <a class="cta" href="https://www.facebook.com/studio.kARTon.bg" target="_blank" rel="noopener">Пиши във Facebook</a>
       </div>
     </article>
     <p id="empty" class="empty" hidden>Няма резултати — избери други филтри.</p>
@@ -616,18 +1142,18 @@
     var area = document.getElementById("f-area");
     var cat = document.getElementById("f-cat");
     var cards = Array.prototype.slice.call(document.querySelectorAll("#grid .card"));
-    var shown = document.getElementById("shown");
-    var total = document.getElementById("total");
+    var events = Array.prototype.slice.call(document.querySelectorAll("#events .event"));
+    var items = cards.concat(events);
+    var countLine = document.getElementById("count-line");
     var empty = document.getElementById("empty");
-    if (total) total.textContent = String(cards.length);
+    var emptyEvents = document.getElementById("empty-events");
 
     function tokens(card, attr) {
       return (card.getAttribute(attr) || "").split(",").map(function (s) { return s.trim(); }).filter(Boolean);
     }
-    function areaAll(r) { return r === "all" || r === "sofia"; }
     function matchCard(card, a, r, c) {
       var okA = a === "all" || tokens(card, "data-age").indexOf(a) !== -1;
-      var okR = areaAll(r) || tokens(card, "data-area").indexOf(r) !== -1;
+      var okR = r === "all" || tokens(card, "data-area").indexOf(r) !== -1;
       var okC = c === "all" || card.getAttribute("data-cat") === c;
       return okA && okR && okC;
     }
@@ -636,7 +1162,7 @@
       var r = ignore === "area" ? "all" : area.value;
       var c = ignore === "cat" ? "all" : cat.value;
       var set = {};
-      cards.forEach(function (card) {
+      items.forEach(function (card) {
         if (!matchCard(card, a, r, c)) return;
         if (attr === "data-cat") set[card.getAttribute("data-cat")] = true;
         else tokens(card, attr).forEach(function (t) { set[t] = true; });
@@ -655,19 +1181,29 @@
     }
     function refreshOptions() {
       cascadeSelect(age, available("data-age", "age"), { all: true });
-      cascadeSelect(area, available("data-area", "area"), { all: true, sofia: true });
+      cascadeSelect(area, available("data-area", "area"), { all: true });
       cascadeSelect(cat, available("data-cat", "cat"), { all: true });
     }
     function apply() {
       refreshOptions();
-      var a = age.value, r = area.value, c = cat.value, n = 0;
+      var a = age.value, r = area.value, c = cat.value, n = 0, ne = 0;
       cards.forEach(function (card) {
         var show = matchCard(card, a, r, c);
         card.classList.toggle("hidden", !show);
         if (show) n++;
       });
-      shown.textContent = String(n);
+      events.forEach(function (card) {
+        var show = matchCard(card, a, r, c);
+        card.classList.toggle("hidden", !show);
+        if (show) ne++;
+      });
+      if (countLine) {
+        var evWord = ne === 1 ? "събитие" : "събития";
+        var acWord = n === 1 ? "занимание" : "занимания";
+        countLine.textContent = ne + " " + evWord + " · " + n + " " + acWord;
+      }
       if (empty) empty.hidden = n !== 0;
+      if (emptyEvents) emptyEvents.hidden = ne !== 0;
     }
     function trackPath(path) {
       try {
@@ -678,6 +1214,8 @@
       } catch (err) {}
     }
     function cardSlug(card) {
+      var slug = card.getAttribute("data-slug");
+      if (slug) return slug;
       var src = (card.querySelector("img") && card.querySelector("img").getAttribute("src")) || "";
       return src.split("/").pop().replace(/\.[a-z0-9]+$/i, "").replace(/^\d+-/, "") || "unknown";
     }
@@ -698,7 +1236,7 @@
     age.addEventListener("change", onFilter);
     area.addEventListener("change", onFilter);
     cat.addEventListener("change", onFilter);
-    cards.forEach(function (card) {
+    items.forEach(function (card) {
       var link = card.querySelector("a.cta");
       if (!link) return;
       link.addEventListener("click", function () {
